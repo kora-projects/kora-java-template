@@ -2,6 +2,7 @@ package ru.tinkoff.kora.java;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.net.http.HttpClient;
@@ -11,6 +12,7 @@ import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@Disabled("example of black box testing against default /metric endpoint")
 class BlackBoxTests {
 
     private static final AppContainer container = AppContainer.build()

@@ -5,7 +5,7 @@ import ru.tinkoff.kora.common.annotation.Root;
 
 @Root
 @Component
-public class SomeService {
+public final class SomeService {
 
     public String getSome() {
         return "1";

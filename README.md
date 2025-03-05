@@ -27,8 +27,6 @@ docker build -t kora-java-template .
 
 ## Run
 
-Перед запуском локально требуется запустить базу Postgres и накатить миграции.
-
 Запустить локально:
 ```shell
 ./gradlew run
