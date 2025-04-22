@@ -9,6 +9,12 @@ plugins {
 group = groupId
 version = koraVersion
 
+application {
+    applicationName = "application"
+    mainClassName = "ru.tinkoff.kora.java.Application"
+    applicationDefaultJvmArgs = ["-Dfile.encoding=UTF-8"]
+}
+
 sourceCompatibility = JavaVersion.VERSION_21
 targetCompatibility = JavaVersion.VERSION_21
 
@@ -38,16 +44,6 @@ dependencies {
     testImplementation "org.testcontainers:junit-jupiter:1.19.8"
 }
 
-application {
-    applicationName = "application"
-    mainClassName = "ru.tinkoff.kora.java.Application"
-    applicationDefaultJvmArgs = ["-Dfile.encoding=UTF-8"]
-}
-
-distTar {
-    archiveFileName = "application.tar"
-}
-
 //noinspection GroovyAssignabilityCheck
 run {
     environment([
@@ -55,9 +51,13 @@ run {
     ])
 }
 
-test.dependsOn tasks.distTar
+distTar {
+    archiveFileName = "application.tar"
+}
 
 test {
+    dependsOn tasks.distTar
+
     jvmArgs += [
             "-XX:+TieredCompilation",
             "-XX:TieredStopAtLevel=1",
