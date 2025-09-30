@@ -1,4 +1,4 @@
-package ru.tinkoff.kora.java;
+package ru.tinkoff.kora.example;
 
 import java.net.URI;
 import java.nio.file.Paths;
@@ -32,7 +32,7 @@ public final class AppContainer extends GenericContainer<AppContainer> {
     protected void configure() {
         super.configure();
         withExposedPorts(8085);
-        withStartupTimeout(Duration.ofSeconds(120));
+        withStartupTimeout(Duration.ofSeconds(10));
         withLogConsumer(new Slf4jLogConsumer(LoggerFactory.getLogger(AppContainer.class)));
         waitingFor(Wait.forHttp("/system/readiness").forPort(8085).forStatusCode(200));
     }

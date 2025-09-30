@@ -1,4 +1,4 @@
-package ru.tinkoff.kora.java;
+package ru.tinkoff.kora.example;
 
 import org.junit.jupiter.api.Test;
 import ru.tinkoff.kora.test.extension.junit5.KoraAppTest;
@@ -10,10 +10,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class UnitTests {
 
     @TestComponent
-    private SomeService someService;
+    private SomeService service;
 
     @Test
     void getSomeSuccess() {
-        assertEquals("1", someService.getSome());
+        assertEquals("1", service.getSome());
     }
 }
