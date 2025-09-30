@@ -10,10 +10,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class UnitTests {
 
     @TestComponent
-    private SomeService someService;
+    private SomeService service;
 
     @Test
     void getSomeSuccess() {
-        assertEquals("1", someService.getSome());
+        assertEquals("1", service.getSome());
     }
 }
