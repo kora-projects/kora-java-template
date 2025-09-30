@@ -9,8 +9,10 @@ plugins {
 group = groupId
 version = koraVersion
 
-sourceCompatibility = JavaVersion.VERSION_21
-targetCompatibility = JavaVersion.VERSION_21
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
 
 repositories {
     mavenCentral()
@@ -42,7 +44,7 @@ dependencies {
 
 application {
     applicationName = "application"
-    mainClassName = "ru.tinkoff.kora.java.Application"
+    mainClass = "ru.tinkoff.kora.java.Application"
     applicationDefaultJvmArgs = ["-Dfile.encoding=UTF-8"]
 }
 
