@@ -1,4 +1,4 @@
-package ru.tinkoff.kora.java;
+package ru.tinkoff.kora.example;
 
 import ru.tinkoff.kora.common.Component;
 import ru.tinkoff.kora.common.annotation.Root;

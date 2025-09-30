@@ -1,4 +1,4 @@
-package ru.tinkoff.kora.java;
+package ru.tinkoff.kora.example;
 
 import java.net.URI;
 import java.nio.file.Paths;

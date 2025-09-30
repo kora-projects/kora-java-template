@@ -1,4 +1,4 @@
-package ru.tinkoff.kora.java;
+package ru.tinkoff.kora.example;
 
 import org.junit.jupiter.api.Test;
 import ru.tinkoff.kora.test.extension.junit5.KoraAppTest;
