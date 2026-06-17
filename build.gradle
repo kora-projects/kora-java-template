@@ -9,11 +9,6 @@ plugins {
 group = groupId
 version = koraVersion
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
-}
-
 repositories {
     mavenCentral()
     maven { url "https://central.sonatype.com/repository/maven-snapshots" }
@@ -21,12 +16,8 @@ repositories {
 
 configurations {
     koraBom
-    annotationProcessor.extendsFrom(koraBom)
-    compileOnly.extendsFrom(koraBom)
-    implementation.extendsFrom(koraBom)
-    api.extendsFrom(koraBom)
-    testImplementation.extendsFrom(koraBom)
-    testAnnotationProcessor.extendsFrom(koraBom)
+    annotationProcessor.extendsFrom(koraBom); compileOnly.extendsFrom(koraBom); implementation.extendsFrom(koraBom)
+    api.extendsFrom(koraBom); testImplementation.extendsFrom(koraBom); testAnnotationProcessor.extendsFrom(koraBom)
 }
 
 dependencies {
@@ -39,7 +30,14 @@ dependencies {
 
     testImplementation "org.mockito:mockito-core:5.18.0"
     testImplementation "ru.tinkoff.kora:test-junit5"
-    testImplementation "org.testcontainers:junit-jupiter:1.19.8"
+    testImplementation "org.testcontainers:junit-jupiter:1.21.4"
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+        vendor = JvmVendorSpec.ADOPTIUM
+    }
 }
 
 application {
